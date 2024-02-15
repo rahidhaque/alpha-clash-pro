@@ -1,3 +1,13 @@
+function hideElement(elementName){
+    const elementSection= document.getElementById(elementName);
+    elementSection.classList.add('hidden');
+}
+
+function showElement(elementName){
+    const elementSection= document.getElementById(elementName);
+    elementSection.classList.remove('hidden');
+}
+
 function getRandomAlphabet(){
     const alphabetString= 'abcdefghiklmnopqrstvxyz';
     const alphabets= alphabetString.split('');
