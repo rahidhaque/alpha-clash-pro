@@ -48,12 +48,18 @@ function gameOver(){
     hideElement('home');
     hideElement('play-ground');
     showElement('final-score');
+    const finalScore= getElementValue('score');
+    setElementValue('final-score-value',finalScore);
 }
 
 function playAgain(){
     showElement('play-ground');
     hideElement('final-score');
     hideElement('home');
+
+    //reset values
+    setElementValue('life',5);
+    setElementValue('score',0);
 }
 
 function play() {

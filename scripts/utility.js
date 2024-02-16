@@ -19,9 +19,6 @@ function setElementValue(elementId, value){
     element.innerText=value;
 }
 
-function setElementById(){
-
-}
 
 function getRandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
