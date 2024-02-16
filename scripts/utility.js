@@ -8,6 +8,21 @@ function showElement(elementName){
     elementSection.classList.remove('hidden');
 }
 
+function getElementValue(elementId){
+    const element= document.getElementById(elementId);
+    const elementValue= parseInt(element.innerText);
+    return elementValue; 
+}
+
+function setElementValue(elementId, value){
+    const element= document.getElementById(elementId);
+    element.innerText=value;
+}
+
+function setElementById(){
+
+}
+
 function getRandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetString.split('');

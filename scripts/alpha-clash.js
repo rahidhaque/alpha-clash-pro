@@ -6,22 +6,29 @@ function handleKeyboardButtonPress(event) {
 
 
     if (playerPressed === currentAlphabet) {
-        const currentScoreText = document.getElementById('score');
-        const currentScore = parseInt(currentScoreText.innerText);
+        // const currentScoreText = document.getElementById('score');
+        // const currentScore = parseInt(currentScoreText.innerText);
+        const currentScore= getElementValue('score');
         //increase player score
         const newScore = currentScore + 1;
-        currentScoreText.innerText = newScore;
+        // currentScoreText.innerText = newScore;
+        setElementValue('score', newScore);
         //continue the game
         removeBackgroundColor(currentAlphabet);
         continueGame();
     }
     else {
         //decrease life
-        const currentLifeText= document.getElementById('life');
-        const currentLife= parseInt(currentLifeText.innerText);
+        // const currentLifeText= document.getElementById('life');
+        // const currentLife= parseInt(currentLifeText.innerText);
+        const currentLife= getElementValue('life');
 
         const newLife= currentLife-1;
-        currentLifeText.innerText= newLife;
+        setElementValue('life',newLife);
+
+        if(newLife===0){
+            gameOver();
+        }
     }
 }
 
@@ -37,8 +44,21 @@ function continueGame() {
     setBackgroundColor(alphabet);
 }
 
+function gameOver(){
+    hideElement('home');
+    hideElement('play-ground');
+    showElement('final-score');
+}
+
+function playAgain(){
+    showElement('play-ground');
+    hideElement('final-score');
+    hideElement('home');
+}
+
 function play() {
     hideElement('home');
+    hideElement('final-score');
     showElement('play-ground');
     continueGame();
 }
