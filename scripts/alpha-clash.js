@@ -3,6 +3,10 @@ function handleKeyboardButtonPress(event) {
     const currentAlphabetString = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetString.innerText.toLowerCase();
 
+    //stop the game if gamer press escape button
+    if(playerPressed==='Escape'){
+        gameOver();
+    }
 
 
     if (playerPressed === currentAlphabet) {
